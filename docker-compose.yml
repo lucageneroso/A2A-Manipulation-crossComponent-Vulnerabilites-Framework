@@ -1,0 +1,77 @@
+# ─────────────────────────────────────────────────────────────
+#  LLM Cross-Component Vulnerability Framework
+#  Benchmark Application Corpus
+# ─────────────────────────────────────────────────────────────
+#  All three apps connect to the host's Ollama instance via
+#  the host-gateway. Ollama must be running locally with:
+#    ollama pull gemma3:1b
+# ─────────────────────────────────────────────────────────────
+
+services:
+
+  # ── App A: Semantic Misalignment Bypass ──────────────────────
+  app_a:
+    build:
+      context: ./benchmark_apps/app_a_semantic_bypass
+      dockerfile: Dockerfile
+    container_name: pentesllm_app_a
+    ports:
+      - "8001:8000"
+    environment:
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - LLM_MODEL=gemma3:1b
+      - APP_NAME=App-A-Semantic-Bypass
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # ── App B: RAG-to-Tool Poisoning ────────────────────────────
+  app_b:
+    build:
+      context: ./benchmark_apps/app_b_rag_tool_poisoning
+      dockerfile: Dockerfile
+    container_name: pentesllm_app_b
+    ports:
+      - "8002:8000"
+    environment:
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - LLM_MODEL=gemma3:1b
+      - APP_NAME=App-B-RAG-Tool-Poisoning
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # ── App C: Context Truncation Fallback ──────────────────────
+  app_c:
+    build:
+      context: ./benchmark_apps/app_c_context_truncation
+      dockerfile: Dockerfile
+    container_name: pentesllm_app_c
+    ports:
+      - "8003:8000"
+    environment:
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - LLM_MODEL=gemma3:1b
+      - APP_NAME=App-C-Context-Truncation
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+networks:
+  default:
+    name: pentesllm_net

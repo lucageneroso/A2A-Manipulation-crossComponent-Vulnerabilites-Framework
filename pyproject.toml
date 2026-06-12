@@ -1,0 +1,51 @@
+[project]
+name = "pentesllm"
+version = "0.1.0"
+description = "Automated Discovery and Quantification of Cross-Component Vulnerabilities in Multi-Layer LLM Architectures"
+authors = [{ name = "Research Author" }]
+requires-python = ">=3.11"
+readme = "README.md"
+
+dependencies = [
+    # Core LLM & orchestration
+    "langchain>=0.3.0",
+    "langchain-community>=0.3.0",
+    "langchain-ollama>=0.3.0",
+
+    # Semantic routing (App A)
+    "sentence-transformers>=3.0.0",
+    "scikit-learn>=1.4.0",
+
+    # Vector store (App B)
+    "chromadb>=0.5.0",
+    "langchain-chroma>=0.1.0",
+
+    # API layer for benchmark apps
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "pydantic>=2.7.0",
+
+    # HTTP client for the framework
+    "httpx>=0.27.0",
+    "aiohttp>=3.10.0",
+
+    # Data & analysis
+    "numpy>=1.26.0",
+    "pandas>=2.2.0",
+
+    # CLI & output
+    "rich>=13.7.0",
+    "typer>=0.12.0",
+
+    # Testing
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
