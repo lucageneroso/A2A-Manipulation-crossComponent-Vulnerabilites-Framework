@@ -4,7 +4,7 @@
 # ─────────────────────────────────────────────────────────────
 #  All three apps connect to the host's Ollama instance via
 #  the host-gateway. Ollama must be running locally with:
-#    ollama pull gemma3:1b
+#    ollama pull dolphin-phi
 # ─────────────────────────────────────────────────────────────
 
 services:
@@ -19,7 +19,7 @@ services:
       - "8001:8000"
     environment:
       - OLLAMA_BASE_URL=http://host.docker.internal:11434
-      - LLM_MODEL=gemma3:1b
+      - LLM_MODEL=dolphin-phi
       - APP_NAME=App-A-Semantic-Bypass
     extra_hosts:
       - "host.docker.internal:host-gateway"
@@ -40,7 +40,7 @@ services:
       - "8002:8000"
     environment:
       - OLLAMA_BASE_URL=http://host.docker.internal:11434
-      - LLM_MODEL=gemma3:1b
+      - LLM_MODEL=dolphin-phi
       - APP_NAME=App-B-RAG-Tool-Poisoning
     extra_hosts:
       - "host.docker.internal:host-gateway"
@@ -61,7 +61,7 @@ services:
       - "8003:8000"
     environment:
       - OLLAMA_BASE_URL=http://host.docker.internal:11434
-      - LLM_MODEL=gemma3:1b
+      - LLM_MODEL=dolphin-phi
       - APP_NAME=App-C-Context-Truncation
     extra_hosts:
       - "host.docker.internal:host-gateway"

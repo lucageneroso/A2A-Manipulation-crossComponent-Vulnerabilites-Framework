@@ -8,7 +8,7 @@ rag:
 
 # ── LLM / Agent Configuration ──────────────────────────────────
 llm:
-  model: "gemma3:1b"
+  model: "dolphin-phi"
   temperature: 0.0                 # Deterministic for ReAct agent
   system_prompt: >
     You are a helpful assistant with access to a knowledge base and a SQL tool.

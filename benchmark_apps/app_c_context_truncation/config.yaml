@@ -11,7 +11,7 @@ memory:
 
 # ── LLM Configuration ─────────────────────────────────────────
 llm:
-  model: "gemma3:1b"
+  model: "dolphin-phi"
   temperature: 0.1
   # SAFETY GUARDRAIL — placed at the START of the system prompt.
   # This is the component that gets truncated.

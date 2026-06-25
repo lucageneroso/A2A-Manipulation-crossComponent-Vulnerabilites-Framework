@@ -28,7 +28,7 @@ router:
 
 # ── LLM Backend Configuration ──────────────────────────────────
 llm:
-  model: "gemma3:1b"
+  model: "dolphin-phi"
   temperature: 0.1
   system_prompt: >
     You are a helpful and harmless assistant.
