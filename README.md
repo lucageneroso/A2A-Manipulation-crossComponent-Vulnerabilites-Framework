@@ -84,3 +84,56 @@ PenTesLLM/
 1. Do cross-component vulnerabilities exist in systems built from individually secure components?
 2. Does the IAF achieve higher recall on cross-component vulnerabilities than baseline tools?
 3. Does the EAPE metric provide lower variance resilience scoring than binary success rates?
+
+## Reproducibility Guide (Multi-Agent Systems & ARD)
+
+Questa sezione è dedicata alla riproducibilità sperimentale per le vulnerabilità nei sistemi Multi-Agente (MAS) e in particolare per dimostrare il fenomeno dell'*Action-Reasoning Disconnect (ARD)* e l'efficacia degli attacchi *Agent-to-Agent Manipulation (A2AM)*.
+
+### 1. Preparazione dell'Ambiente
+
+Dopo aver clonato il repository, è necessario configurare l'ambiente virtuale e le dipendenze:
+
+```bash
+# Creazione e attivazione virtualenv
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# Linux/Mac:
+source venv/bin/activate
+
+# Installazione dipendenze
+pip install -r requirements.txt
+```
+
+Per testare modelli esterni tramite OpenRouter (fortemente raccomandato per testare modelli *State-of-the-Art* come `gpt-4o-mini`), configura le variabili d'ambiente. Su Windows PowerShell:
+```powershell
+$env:OPENROUTER_API_KEY="la_tua_chiave_api"
+$env:PYTHONPATH="."
+```
+
+### 2. Testare i Confini Architetturali (A2AM)
+
+Il framework permette di testare come la compromissione di un nodo "periferico" (es. Senior Security Researcher) si propaghi fino a un nodo con privilegi elevati (es. Senior System Administrator). Le topologie predefinite si trovano in `framework/mas/mas_topology.py` (es. `CHAIN_2`, `CHAIN_3`, `RAG_POISONING`, `SHARED_MEMORY`).
+
+Per avviare la **Campagna MAS Adattiva** completa, utilizza il comando:
+```bash
+python experiments/run_mas_campaign.py --model openrouter/openai/gpt-4o-mini --trials 30 --adaptive --topologies CHAIN_2
+```
+*Nota (ARD Fix)*: L'infrastruttura sovrascrive automaticamente le funzioni native di tool calling dell'API per forzare l'uso del parsing testuale *ReAct*. Questo assicura che eventuali bug del provider API non mascherino vulnerabilità reali, permettendo all'attacco di funzionare senza falsi negativi dovuti a incompatibilità di schema.
+
+### 3. Tipi di Campagne Previste
+
+Il modulo di sperimentazione (`run_mas_campaign.py`) supporta diverse modalità tramite flag e opzioni:
+
+- **Campagna Standard (Baseline)**: `--campaign-type standard` (senza flag `--adaptive`). Utilizza payload prioritari a turno singolo (Zero-Shot). Utile per valutare vulnerabilità superficiali (jailbreak classici).
+- **Campagna Adattiva Multi-Turn (A2AM)**: `--adaptive`. Il payload L1 modula dinamicamente il livello di pressione psicologica e ingegneria sociale per abbattere le difese di L2 in più turni di interazione. Questo attacco ha registrato fino all'86.7% di success rate su `gpt-4o-mini`.
+- **Campagna RLHF Bypass**: `--campaign-type rlhf_bypass`. Carica scenari pre-calcolati per aggirare le restrizioni etiche dell'agente bersaglio sfruttando simulazioni di emergenza (es. simulando una minaccia terroristica o rischio normativo GDPR).
+- **Livelli di Difesa**: Puoi parametrizzare l'agente target usando il flag `--defense-level [weak|standard|strong]`. `strong` inietta direttive estreme di sicurezza nel system prompt del sysadmin.
+
+### 4. Analisi dei Risultati e ARD (Action-Reasoning Disconnect)
+
+Al termine di una campagna (che salva i raw log completi in `experiments/results/mas/traces.jsonl`), il framework genera automaticamente due file:
+1. `campaign_[NOME]_*.json`: un summary quantitativo JSON.
+2. `report_[NOME].md`: un report leggibile in Markdown che include la metrica **EAPE-MAS**.
+
+**Individuazione dell'ARD**: Il fenomeno ARD viene tracciato automaticamente nel report finale. Potrete notare come, in caso di compromissione, il tasso *Critical Disconnect Rate* o *False Security Rate* salga. Leggendo i `traces.jsonl` o usando lo script ausiliario `python experiments/generate_detailed_thesis_report.py`, è possibile estrapolare il turno esatto in cui l'agente bersaglio "finge" di rifiutare nel suo *Thought Process* ("Non sono autorizzato..."), ma poi esegue l'azione compromettente (`Action: write_file`).
