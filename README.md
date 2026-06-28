@@ -137,3 +137,25 @@ At the end of a campaign (which saves the complete raw logs in `experiments/resu
 2. `report_[NAME].md`: a readable Markdown report that includes the **EAPE-MAS** metric.
 
 **Identifying ARD**: The ARD phenomenon is automatically tracked in the final report. You will notice how, in the event of a compromise, the *Critical Disconnect Rate* or *False Security Rate* spikes. By reading the `traces.jsonl` or using the auxiliary script `python experiments/generate_detailed_thesis_report.py`, it is possible to extract the exact turn where the target agent "pretends" to refuse the request in its *Thought Process* ("I am not authorized..."), but then actually executes the compromising action (`Action: write_file`).
+
+### 5. Repository Navigation
+
+To help you navigate the current state of the repository, here is an overview of the key directories containing the experimental setup and current results:
+
+- `framework/mas/`: Contains the core Multi-Agent System architecture, including the MAS Runner, node definitions, and topologies.
+- `framework/fuzzer/` & `framework/metric/`: Contains the interaction-aware fuzzing logic and the EAPE metric calculations.
+- `experiments/results/mas/`: This is where all experimental outputs are stored. Inside, you will find:
+  - `traces.jsonl`: The raw event logs for every single turn of every trial.
+  - `campaign_*.json`: Quantitative summaries of the campaigns.
+  - `report_*.md`: Human-readable reports summarizing the EAPE-MAS metrics and ARD rates.
+  - `detailed_thesis_report.md`: A highly detailed tabular breakdown of the 30-trial adaptive campaign, explicitly showcasing the ARD phenomena log snippets for the thesis.
+
+### 6. Experimental Results Obtained
+
+During our latest experimental campaign using the **Adaptive A2AM Attack** on the `CHAIN_2` topology with `gpt-4o-mini`, we obtained the following key results:
+
+- **Attack Success Rate (Compromise Rate):** 86.7% (26 out of 30 trials were successfully compromised).
+- **Action-Reasoning Disconnect (ARD) Rate:** 100% among the compromised trials. In all 26 successful attacks, the target agent explicitly refused the action in its internal reasoning (Thought) due to security constraints, but ultimately executed the malicious tool (Action) anyway.
+- **EAPE-MAS Metric:** The Expected Attack Path Exploitability (EAPE) score demonstrated a high probability of attack propagation across the multi-agent chain, validating the severity of cross-component vulnerabilities in agentic architectures.
+
+For a deep dive into these findings, including turn-by-turn breakdowns and log snippets of the ARD phenomenon, refer to the `experiments/results/mas/detailed_thesis_report.md` file.
