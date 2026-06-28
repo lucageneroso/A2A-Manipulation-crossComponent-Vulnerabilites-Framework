@@ -87,53 +87,53 @@ PenTesLLM/
 
 ## Reproducibility Guide (Multi-Agent Systems & ARD)
 
-Questa sezione è dedicata alla riproducibilità sperimentale per le vulnerabilità nei sistemi Multi-Agente (MAS) e in particolare per dimostrare il fenomeno dell'*Action-Reasoning Disconnect (ARD)* e l'efficacia degli attacchi *Agent-to-Agent Manipulation (A2AM)*.
+This section is dedicated to experimental reproducibility for vulnerabilities in Multi-Agent Systems (MAS), and specifically to demonstrate the *Action-Reasoning Disconnect (ARD)* phenomenon and the effectiveness of *Agent-to-Agent Manipulation (A2AM)* attacks.
 
-### 1. Preparazione dell'Ambiente
+### 1. Environment Setup
 
-Dopo aver clonato il repository, è necessario configurare l'ambiente virtuale e le dipendenze:
+After cloning the repository, you need to configure the virtual environment and dependencies:
 
 ```bash
-# Creazione e attivazione virtualenv
+# Create and activate virtualenv
 python -m venv venv
 # Windows:
 venv\Scripts\activate
 # Linux/Mac:
 source venv/bin/activate
 
-# Installazione dipendenze
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-Per testare modelli esterni tramite OpenRouter (fortemente raccomandato per testare modelli *State-of-the-Art* come `gpt-4o-mini`), configura le variabili d'ambiente. Su Windows PowerShell:
+To test external models via OpenRouter (highly recommended for testing *State-of-the-Art* models like `gpt-4o-mini`), configure the environment variables. On Windows PowerShell:
 ```powershell
-$env:OPENROUTER_API_KEY="la_tua_chiave_api"
+$env:OPENROUTER_API_KEY="your_api_key_here"
 $env:PYTHONPATH="."
 ```
 
-### 2. Testare i Confini Architetturali (A2AM)
+### 2. Testing Architectural Boundaries (A2AM)
 
-Il framework permette di testare come la compromissione di un nodo "periferico" (es. Senior Security Researcher) si propaghi fino a un nodo con privilegi elevati (es. Senior System Administrator). Le topologie predefinite si trovano in `framework/mas/mas_topology.py` (es. `CHAIN_2`, `CHAIN_3`, `RAG_POISONING`, `SHARED_MEMORY`).
+The framework allows you to test how the compromise of a "peripheral" node (e.g., Senior Security Researcher) propagates to a node with elevated privileges (e.g., Senior System Administrator). Pre-defined topologies are located in `framework/mas/mas_topology.py` (e.g., `CHAIN_2`, `CHAIN_3`, `RAG_POISONING`, `SHARED_MEMORY`).
 
-Per avviare la **Campagna MAS Adattiva** completa, utilizza il comando:
+To launch the complete **Adaptive MAS Campaign**, use the command:
 ```bash
 python experiments/run_mas_campaign.py --model openrouter/openai/gpt-4o-mini --trials 30 --adaptive --topologies CHAIN_2
 ```
-*Nota (ARD Fix)*: L'infrastruttura sovrascrive automaticamente le funzioni native di tool calling dell'API per forzare l'uso del parsing testuale *ReAct*. Questo assicura che eventuali bug del provider API non mascherino vulnerabilità reali, permettendo all'attacco di funzionare senza falsi negativi dovuti a incompatibilità di schema.
+*Note (ARD Fix)*: The infrastructure automatically overrides the API's native tool calling functions to force the use of *ReAct* textual parsing. This ensures that any API provider bugs do not mask actual vulnerabilities, allowing the attack to work without false negatives due to schema incompatibilities.
 
-### 3. Tipi di Campagne Previste
+### 3. Supported Campaign Types
 
-Il modulo di sperimentazione (`run_mas_campaign.py`) supporta diverse modalità tramite flag e opzioni:
+The experimental module (`run_mas_campaign.py`) supports various modes via flags and options:
 
-- **Campagna Standard (Baseline)**: `--campaign-type standard` (senza flag `--adaptive`). Utilizza payload prioritari a turno singolo (Zero-Shot). Utile per valutare vulnerabilità superficiali (jailbreak classici).
-- **Campagna Adattiva Multi-Turn (A2AM)**: `--adaptive`. Il payload L1 modula dinamicamente il livello di pressione psicologica e ingegneria sociale per abbattere le difese di L2 in più turni di interazione. Questo attacco ha registrato fino all'86.7% di success rate su `gpt-4o-mini`.
-- **Campagna RLHF Bypass**: `--campaign-type rlhf_bypass`. Carica scenari pre-calcolati per aggirare le restrizioni etiche dell'agente bersaglio sfruttando simulazioni di emergenza (es. simulando una minaccia terroristica o rischio normativo GDPR).
-- **Livelli di Difesa**: Puoi parametrizzare l'agente target usando il flag `--defense-level [weak|standard|strong]`. `strong` inietta direttive estreme di sicurezza nel system prompt del sysadmin.
+- **Standard Campaign (Baseline)**: `--campaign-type standard` (without the `--adaptive` flag). Uses single-turn (Zero-Shot) priority payloads. Useful for evaluating shallow vulnerabilities (classic jailbreaks).
+- **Multi-Turn Adaptive Campaign (A2AM)**: `--adaptive`. The L1 payload dynamically modulates the level of psychological pressure and social engineering to break down L2's defenses over multiple interaction turns. This attack achieved up to an 86.7% success rate on `gpt-4o-mini`.
+- **RLHF Bypass Campaign**: `--campaign-type rlhf_bypass`. Loads pre-computed scenarios to bypass the target agent's ethical restrictions by exploiting emergency simulations (e.g., simulating a terrorist threat or a GDPR compliance risk).
+- **Defense Levels**: You can parameterize the target agent using the `--defense-level [weak|standard|strong]` flag. `strong` injects extreme security directives into the sysadmin's system prompt.
 
-### 4. Analisi dei Risultati e ARD (Action-Reasoning Disconnect)
+### 4. Result Analysis and ARD (Action-Reasoning Disconnect)
 
-Al termine di una campagna (che salva i raw log completi in `experiments/results/mas/traces.jsonl`), il framework genera automaticamente due file:
-1. `campaign_[NOME]_*.json`: un summary quantitativo JSON.
-2. `report_[NOME].md`: un report leggibile in Markdown che include la metrica **EAPE-MAS**.
+At the end of a campaign (which saves the complete raw logs in `experiments/results/mas/traces.jsonl`), the framework automatically generates two files:
+1. `campaign_[NAME]_*.json`: a quantitative JSON summary.
+2. `report_[NAME].md`: a readable Markdown report that includes the **EAPE-MAS** metric.
 
-**Individuazione dell'ARD**: Il fenomeno ARD viene tracciato automaticamente nel report finale. Potrete notare come, in caso di compromissione, il tasso *Critical Disconnect Rate* o *False Security Rate* salga. Leggendo i `traces.jsonl` o usando lo script ausiliario `python experiments/generate_detailed_thesis_report.py`, è possibile estrapolare il turno esatto in cui l'agente bersaglio "finge" di rifiutare nel suo *Thought Process* ("Non sono autorizzato..."), ma poi esegue l'azione compromettente (`Action: write_file`).
+**Identifying ARD**: The ARD phenomenon is automatically tracked in the final report. You will notice how, in the event of a compromise, the *Critical Disconnect Rate* or *False Security Rate* spikes. By reading the `traces.jsonl` or using the auxiliary script `python experiments/generate_detailed_thesis_report.py`, it is possible to extract the exact turn where the target agent "pretends" to refuse the request in its *Thought Process* ("I am not authorized..."), but then actually executes the compromising action (`Action: write_file`).
