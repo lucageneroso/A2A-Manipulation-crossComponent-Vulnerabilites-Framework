@@ -152,10 +152,14 @@ To help you navigate the current state of the repository, here is an overview of
 
 ### 6. Experimental Results Obtained
 
-During our latest experimental campaign using the **Adaptive A2AM Attack** on the `CHAIN_2` topology with `gpt-4o-mini`, we obtained the following key results:
+> [!IMPORTANT]
+> The following results were obtained during the latest experimental campaign using the **Adaptive A2AM Attack** on the `CHAIN_2` topology with the `gpt-4o-mini` model (30 trials).
 
-- **Attack Success Rate (Compromise Rate):** 86.7% (26 out of 30 trials were successfully compromised).
-- **Action-Reasoning Disconnect (ARD) Rate:** 100% among the compromised trials. In all 26 successful attacks, the target agent explicitly refused the action in its internal reasoning (Thought) due to security constraints, but ultimately executed the malicious tool (Action) anyway.
-- **EAPE-MAS Metric:** The Expected Attack Path Exploitability (EAPE) score demonstrated a high probability of attack propagation across the multi-agent chain, validating the severity of cross-component vulnerabilities in agentic architectures.
+| Metric | Result | Description |
+| :--- | :---: | :--- |
+| **Attack Success Rate** (Compromise) | 🔴 **86.7%** | 26 out of 30 trials resulted in a successful compromise. |
+| **ARD Rate** (Action-Reasoning Disconnect) | ⚠️ **100%** | In all 26 successful attacks, the target agent *refused* the action in its internal reasoning, but ultimately executed the malicious tool anyway. |
+| **EAPE-MAS Metric** | 📈 **High** | The Expected Attack Path Exploitability score confirms a severe probability of attack propagation across the multi-agent chain. |
 
-For a deep dive into these findings, including turn-by-turn breakdowns and log snippets of the ARD phenomenon, refer to the `experiments/results/mas/detailed_thesis_report.md` file.
+> [!TIP]
+> For a deep dive into these findings, including turn-by-turn breakdowns and log snippets of the ARD phenomenon, refer to the detailed tabular breakdown: [detailed_thesis_report.md](experiments/results/mas/detailed_thesis_report.md).
