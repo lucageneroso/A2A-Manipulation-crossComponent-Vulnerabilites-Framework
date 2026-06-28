@@ -1,19 +1,22 @@
-# LLM Cross-Component Vulnerability Framework
+# Agentic Security & Cross-Component Vulnerability Framework
 
-> **Research project:** *Automated Discovery and Quantification of Cross-Component Vulnerabilities in Multi-Layer LLM Architectures*
+> **Research project:** *Automated Discovery and Quantification of Cross-Component Vulnerabilities in Multi-Layer and Multi-Agent LLM Architectures*
 
 ## Overview
 
-This framework introduces the concept of **cross-component vulnerabilities** in compound AI systems — security flaws that only emerge at the *interfaces* between stack components (semantic routers, RAG pipelines, tool executors, conversational memory), and which single-component adversarial tools fail to detect.
+This framework introduces advanced methodologies for detecting **cross-component vulnerabilities** in compound AI systems. It explores security flaws that only emerge at the *interfaces* between stack components (semantic routers, RAG pipelines, tool executors) and specifically highlights the vulnerability of **Multi-Agent Systems (MAS)**.
+
+Through automated fuzzing and Agent-to-Agent Manipulation (A2AM), the framework proves the existence of the **Action-Reasoning Disconnect (ARD)** — a severe cognitive phenomenon where an LLM agent explicitly refuses a malicious action in its internal reasoning, but ultimately executes it due to manipulative context pressure.
 
 ### Core Contributions
 
-| Module | Type | Description |
+| Module / Topic | Type | Description |
 |---|---|---|
-| `framework/fuzzer/interaction_aware_fuzzer.py` | **Research** | IAF — generates multi-stage payloads spanning component boundaries |
-| `framework/metric/eape.py` | **Research** | EAPE — probabilistic attack graph exploitability metric |
-| `benchmark_apps/` | **Research** | 3 vulnerable-by-design apps with planted cross-component flaws |
-| `framework/fuzzer/baseline_attacker.py` | Engineering | Standard single-stage prompt injection (control group) |
+| **Action-Reasoning Disconnect (ARD)** | **Research** | Discovery of cognitive misalignment between LLM *thought processes* and *physical tool execution* in multi-agent chains. |
+| **Agent-to-Agent Manipulation (A2AM)** | **Research** | Multi-turn, adaptive social engineering attacks executed by malicious sub-agents to compromise privileged system agents. |
+| `framework/mas/` & `mas_runner.py` | **Framework** | Dynamic A2AM testing suite simulating complex agent hierarchies (e.g., `CHAIN_2`, `RAG_POISONING`). |
+| `framework/fuzzer/interaction_aware_fuzzer.py` | **Framework** | IAF — generates multi-stage payloads spanning compound system boundaries. |
+| `framework/metric/eape.py` | **Metric** | EAPE-MAS — probabilistic attack graph exploitability metric to evaluate agentic chain robustness. |
 
 ## Prerequisites
 
