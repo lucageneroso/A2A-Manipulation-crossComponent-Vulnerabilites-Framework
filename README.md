@@ -1,4 +1,4 @@
-# Agentic Security & Cross-Component Vulnerability Framework
+# Agent-To-Agent Manipulation & Cross-Component Vulnerability Framework
 
 > **Research project:** *Automated Discovery and Quantification of Cross-Component Vulnerabilities in Multi-Layer and Multi-Agent LLM Architectures*
 
