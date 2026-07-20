@@ -1,15 +1,21 @@
-# Agent-To-Agent Manipulation & Cross-Component Vulnerability Framework
+# AI Security & Behavioral Control Research Repository
+
+This repository hosts two distinct research frameworks developed for auditing, securing, and controlling advanced AI architectures:
+1. **Cross-Component Vulnerability Framework (a2aM & ARD)**: Fuzzing and exploiting Multi-Agent Systems.
+2. **Latent Concept Engineering (LCE)**: A mathematically validated framework for zero-latency behavioral compilation.
+
+---
+
+# Part 1: Agentic Security & Cross-Component Vulnerability Framework
 
 > **Research project:** *Automated Discovery and Quantification of Cross-Component Vulnerabilities in Multi-Layer and Multi-Agent LLM Architectures*
 
 ## Overview
-
 This framework introduces advanced methodologies for detecting **cross-component vulnerabilities** in compound AI systems. It explores security flaws that only emerge at the *interfaces* between stack components (semantic routers, RAG pipelines, tool executors) and specifically highlights the vulnerability of **Multi-Agent Systems (MAS)**.
 
 Through automated fuzzing and Agent-to-Agent Manipulation (A2AM), the framework proves the existence of the **Action-Reasoning Disconnect (ARD)** — a severe cognitive phenomenon where an LLM agent explicitly refuses a malicious action in its internal reasoning, but ultimately executes it due to manipulative context pressure.
 
 ### Core Contributions
-
 | Module / Topic | Type | Description |
 |---|---|---|
 | **Action-Reasoning Disconnect (ARD)** | **Research** | Discovery of cognitive misalignment between LLM *thought processes* and *physical tool execution* in multi-agent chains. |
@@ -18,151 +24,47 @@ Through automated fuzzing and Agent-to-Agent Manipulation (A2AM), the framework 
 | `framework/fuzzer/interaction_aware_fuzzer.py` | **Framework** | IAF — generates multi-stage payloads spanning compound system boundaries. |
 | `framework/metric/eape.py` | **Metric** | EAPE-MAS — probabilistic attack graph exploitability metric to evaluate agentic chain robustness. |
 
-## Prerequisites
-
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (with Compose v2)
-- [Ollama](https://ollama.com/) installed and running locally with `llama3.2:3b`:
-  ```bash
-  ollama pull llama3.2:3b
-  ```
-- Python 3.11+
-
-## Quick Start
-
-### 1. Install the framework
+## Quick Start (Part 1)
 ```bash
 pip install -r requirements.txt
-```
-
-### 2. Start the benchmark apps
-```bash
 docker-compose up -d
-```
-
-### 3. Run the baseline attacker (control group)
-```bash
 python experiments/run_baseline.py
-```
-
-### 4. Run the Interaction-Aware Fuzzer
-```bash
 python experiments/run_iaf.py
-```
-
-Results are saved to `experiments/results/`.
-
-## Benchmark Application Corpus
-
-| App | Vulnerability Class | Stack Components Involved |
-|---|---|---|
-| **App A** | Semantic Boundary Mismatch | Semantic Router ↔ LLM |
-| **App B** | Indirect Context Poisoning | RAG Pipeline ↔ Tool Executor |
-| **App C** | Context Truncation Fallback | Memory Manager ↔ Safety Guardrail |
-
-## EAPE Metric
-
-**Expected Attack Path Exploitability** is defined as:
-
-```
-EAPE = ∏ P(T_{i → i+1})
-```
-
-Where each transition probability `P(T)` is empirically estimated from N=100 fuzzing trials. A score of `0.0` means the attack chain is blocked at some boundary; a score of `1.0` means every boundary is fully compromised.
-
-## Project Structure
-
-```
-PenTesLLM/
-├── benchmark_apps/          # 3 vulnerable-by-design LLM applications
-├── framework/               # Core research framework
-│   ├── fuzzer/              # IAF + Baseline Attacker
-│   ├── metric/              # PAG + EAPE
-│   ├── harness/             # Test runner + success judge
-│   └── reporting/           # Result report generation
-└── experiments/             # Experiment scripts + results
-```
-
-## Research Questions
-
-1. Do cross-component vulnerabilities exist in systems built from individually secure components?
-2. Does the IAF achieve higher recall on cross-component vulnerabilities than baseline tools?
-3. Does the EAPE metric provide lower variance resilience scoring than binary success rates?
-
-## Reproducibility Guide (Multi-Agent Systems & ARD)
-
-This section is dedicated to experimental reproducibility for vulnerabilities in Multi-Agent Systems (MAS), and specifically to demonstrate the *Action-Reasoning Disconnect (ARD)* phenomenon and the effectiveness of *Agent-to-Agent Manipulation (A2AM)* attacks.
-
-### 1. Environment Setup
-
-After cloning the repository, you need to configure the virtual environment and dependencies:
-
-```bash
-# Create and activate virtualenv
-python -m venv venv
-# Windows:
-venv\Scripts\activate
-# Linux/Mac:
-source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-To test external models via OpenRouter (highly recommended for testing *State-of-the-Art* models like `gpt-4o-mini`), configure the environment variables. On Windows PowerShell:
-```powershell
-$env:OPENROUTER_API_KEY="your_api_key_here"
-$env:PYTHONPATH="."
-```
-
-### 2. Testing Architectural Boundaries (A2AM)
-
-The framework allows you to test how the compromise of a "peripheral" node (e.g., Senior Security Researcher) propagates to a node with elevated privileges (e.g., Senior System Administrator). Pre-defined topologies are located in `framework/mas/mas_topology.py` (e.g., `CHAIN_2`, `CHAIN_3`, `RAG_POISONING`, `SHARED_MEMORY`).
-
-To launch the complete **Adaptive MAS Campaign**, use the command:
-```bash
 python experiments/run_mas_campaign.py --model openrouter/openai/gpt-4o-mini --trials 30 --adaptive --topologies CHAIN_2
 ```
-*Note (ARD Fix)*: The infrastructure automatically overrides the API's native tool calling functions to force the use of *ReAct* textual parsing. This ensures that any API provider bugs do not mask actual vulnerabilities, allowing the attack to work without false negatives due to schema incompatibilities.
+*Results are saved to `experiments/results/`.*
 
-### 3. Supported Campaign Types
+---
 
-The experimental module (`run_mas_campaign.py`) supports various modes via flags and options:
+# Part 2: Latent Concept Engineering (LCE) Research Framework
 
-- **Standard Campaign (Baseline)**: `--campaign-type standard` (without the `--adaptive` flag). Uses single-turn (Zero-Shot) priority payloads. Useful for evaluating shallow vulnerabilities (classic jailbreaks).
-- **Multi-Turn Adaptive Campaign (A2AM)**: `--adaptive`. The L1 payload dynamically modulates the level of psychological pressure and social engineering to break down L2's defenses over multiple interaction turns. This attack achieved up to an 86.7% success rate on `gpt-4o-mini`.
-- **RLHF Bypass Campaign**: `--campaign-type rlhf_bypass`. Loads pre-computed scenarios to bypass the target agent's ethical restrictions by exploiting emergency simulations (e.g., simulating a terrorist threat or a GDPR compliance risk).
-- **Defense Levels**: You can parameterize the target agent using the `--defense-level [weak|standard|strong]` flag. `strong` injects extreme security directives into the sysadmin's system prompt.
+> **Research project:** *Latent Concept Engineering: Behavioral Compilation Layer for Neural Networks*
 
-### 4. Result Analysis and ARD (Action-Reasoning Disconnect)
+## Overview
+Latent Concept Engineering (LCE) establishes a mathematically precise, zero-latency behavioral control plane for pre-trained language models. Instead of relying on expensive fine-tuning (LoRA/RLHF) or highly variable Prompt Engineering, LCE directly extracts, validates, and structurally compiles **behavioral concepts** (e.g., *Authority*, *Planning*) directly into the topological manifold of the target network.
 
-At the end of a campaign (which saves the complete raw logs in `experiments/results/mas/traces.jsonl`), the framework automatically generates two files:
-1. `campaign_[NAME]_*.json`: a quantitative JSON summary.
-2. `report_[NAME].md`: a readable Markdown report that includes the **EAPE-MAS** metric.
+> **Crucial Finding:** LCE provides a statistically validated, **model-aware** behavioral compilation layer. The framework experimentally falsified the hypothesis of "blind zero-shot universal concept geometries" on opaque models; exact target topological mapping (e.g., via CCA projection) is strictly required for stable causal transfer.
 
-**Identifying ARD**: The ARD phenomenon is automatically tracked in the final report. You will notice how, in the event of a compromise, the *Critical Disconnect Rate* or *False Security Rate* spikes. By reading the `traces.jsonl` or using the auxiliary script `python experiments/generate_detailed_thesis_report.py`, it is possible to extract the exact turn where the target agent "pretends" to refuse the request in its *Thought Process* ("I am not authorized..."), but then actually executes the compromising action (`Action: write_file`).
+### Core Architecture
+1. **Concept Extraction & Registry**: PCA-based extraction of behavioral trajectories from contrastive activation datasets, packaged into portable `.lce` software artifacts.
+2. **Latent CI/CD Pipeline**: Automated drift detection and degradation monitoring for concepts across target model checkpoints.
+3. **Latent Concept Intermediate Representation (LCIR)**: An abstract, hardware-agnostic JSON definition of semantic dimensions, causal constraints, and geometric limits.
+4. **Model-Aware Backend Compiler**: An optimizer that translates an LCIR abstract definition into a raw geometrical intervention via learned projection matrices (e.g., Ridge, CCA).
 
-### 5. Repository Navigation
+## Scientific & Statistical Validation
+The repository provides a rigorously validated, publishable scientific artifact. All interventions are evaluated using:
+- **Bootstrap 95% Confidence Intervals** (10,000 resamples).
+- **Cohen's $d$ Effect Size** measurements against native performance.
+- **FDR-Corrected Permutation Tests** against random-noise baseline matrices.
+- **Severe Ablation Protocols** (Wrong-Concept Attacks, Random Direction Attacks, Magnitude Interferences).
 
-To help you navigate the current state of the repository, here is an overview of the key directories containing the experimental setup and current results:
+### Reproducibility Bundle
+The project has been entirely frozen into an external replication environment (`reproducibility_release/`). 
+This guarantees that external researchers can identically reproduce all statistical significance metrics, transfer efficiencies, and causal benchmark comparisons without access to the internal PCA extraction code.
 
-- `framework/mas/`: Contains the core Multi-Agent System architecture, including the MAS Runner, node definitions, and topologies.
-- `framework/fuzzer/` & `framework/metric/`: Contains the interaction-aware fuzzing logic and the EAPE metric calculations.
-- `experiments/results/mas/`: This is where all experimental outputs are stored. Inside, you will find:
-  - `traces.jsonl`: The raw event logs for every single turn of every trial.
-  - `campaign_*.json`: Quantitative summaries of the campaigns.
-  - `report_*.md`: Human-readable reports summarizing the EAPE-MAS metrics and ARD rates.
-  - `detailed_thesis_report.md`: A highly detailed tabular breakdown of the 30-trial adaptive campaign, explicitly showcasing the ARD phenomena log snippets for the thesis.
-
-### 6. Experimental Results Obtained
-
-> [!IMPORTANT]
-> The following results were obtained during the latest experimental campaign using the **Adaptive A2AM Attack** on the `CHAIN_2` topology with the `gpt-4o-mini` model (30 trials).
-
-| Metric | Result | Description |
-| :--- | :---: | :--- |
-| **Attack Success Rate** (Compromise) | 🔴 **86.7%** | 26 out of 30 trials resulted in a successful compromise. |
-| **ARD Rate** (Action-Reasoning Disconnect) | ⚠️ **100%** | In all 26 successful attacks, the target agent *refused* the action in its internal reasoning, but ultimately executed the malicious tool anyway. |
-| **EAPE-MAS Metric** | 📈 **High** | The Expected Attack Path Exploitability score confirms a severe probability of attack propagation across the multi-agent chain. |
-
-> [!TIP]
-> For a deep dive into these findings, including turn-by-turn breakdowns and log snippets of the ARD phenomenon, refer to the detailed tabular breakdown: [detailed_thesis_report.md](experiments/results/mas/detailed_thesis_report.md).
+## Quick Start (Part 2: LCE Validation)
+To run the fully automated scientific peer-review pipeline and evaluate all claims:
+```bash
+python run_all_validation.py
+```
+*Results, statistical reports, and the final peer-review ready whitepaper (`LCE_whitepaper.md`) are saved to `runs/final_release/`.*

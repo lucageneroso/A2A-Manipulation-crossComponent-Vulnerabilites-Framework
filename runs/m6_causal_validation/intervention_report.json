@@ -1,0 +1,30 @@
+{
+  "layer_8": {
+    "causal_acceptance_criteria": {
+      "kl_auth_gt_kl_random": true,
+      "alignment_increased": false,
+      "style_score_increased": false
+    }
+  },
+  "layer_16": {
+    "causal_acceptance_criteria": {
+      "kl_auth_gt_kl_random": true,
+      "alignment_increased": false,
+      "style_score_increased": false
+    }
+  },
+  "layer_24": {
+    "causal_acceptance_criteria": {
+      "kl_auth_gt_kl_random": true,
+      "alignment_increased": false,
+      "style_score_increased": false
+    }
+  },
+  "layer_final": {
+    "causal_acceptance_criteria": {
+      "kl_auth_gt_kl_random": true,
+      "alignment_increased": true,
+      "style_score_increased": true
+    }
+  }
+}

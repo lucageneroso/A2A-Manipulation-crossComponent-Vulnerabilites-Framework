@@ -1,0 +1,34 @@
+{
+  "Random_Concept_Ablation": {
+    "effect_detected": false,
+    "cohens_d": 0.05
+  },
+  "Wrong_Concept_Ablation": {
+    "effect_detected": false,
+    "semantic_failure": true
+  },
+  "Magnitude_Sweep": {
+    "0.5": {
+      "effect": 0.3
+    },
+    "1.0": {
+      "effect": 0.7
+    },
+    "2.0": {
+      "effect": 0.9,
+      "saturation": true
+    },
+    "3.0": {
+      "effect": -0.2,
+      "interference": true
+    }
+  },
+  "Layer_Sweep": {
+    "optimal_injection_region": "middle-late",
+    "best_layers": [
+      14,
+      18,
+      20
+    ]
+  }
+}

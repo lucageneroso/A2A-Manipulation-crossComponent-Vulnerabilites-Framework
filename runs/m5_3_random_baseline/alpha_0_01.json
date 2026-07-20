@@ -1,0 +1,89 @@
+{
+  "alpha": 0.01,
+  "metrics": {
+    "cosine_logits": {
+      "mean": 0.999766218662262,
+      "std": 0.00011399884010582524
+    },
+    "kl_divergence": {
+      "mean": 0.002780723571777344,
+      "std": 0.0018136228753924467
+    },
+    "token_overlap": {
+      "mean": 0.5992138364779875,
+      "std": 0.26882107245615916
+    }
+  },
+  "runs": [
+    {
+      "seed": 1,
+      "cosine_logits": 0.999902069568634,
+      "kl_divergence": 0.0002307891845703125,
+      "token_overlap": 0.38333333333333336,
+      "output_changed": true
+    },
+    {
+      "seed": 2,
+      "cosine_logits": 0.999805212020874,
+      "kl_divergence": 0.0030364990234375,
+      "token_overlap": 0.5283018867924528,
+      "output_changed": true
+    },
+    {
+      "seed": 3,
+      "cosine_logits": 0.999625563621521,
+      "kl_divergence": 0.0048828125,
+      "token_overlap": 1.0,
+      "output_changed": false
+    },
+    {
+      "seed": 4,
+      "cosine_logits": 0.9998722672462463,
+      "kl_divergence": 0.0004119873046875,
+      "token_overlap": 1.0,
+      "output_changed": false
+    },
+    {
+      "seed": 5,
+      "cosine_logits": 0.9996393918991089,
+      "kl_divergence": 0.004180908203125,
+      "token_overlap": 0.38333333333333336,
+      "output_changed": true
+    },
+    {
+      "seed": 10,
+      "cosine_logits": 0.9998329281806946,
+      "kl_divergence": 0.0028839111328125,
+      "token_overlap": 0.38333333333333336,
+      "output_changed": true
+    },
+    {
+      "seed": 42,
+      "cosine_logits": 0.9996494054794312,
+      "kl_divergence": 0.0025634765625,
+      "token_overlap": 0.5471698113207547,
+      "output_changed": true
+    },
+    {
+      "seed": 100,
+      "cosine_logits": 0.9998546838760376,
+      "kl_divergence": 0.0026092529296875,
+      "token_overlap": 0.38333333333333336,
+      "output_changed": true
+    },
+    {
+      "seed": 999,
+      "cosine_logits": 0.9998737573623657,
+      "kl_divergence": 0.000934600830078125,
+      "token_overlap": 1.0,
+      "output_changed": false
+    },
+    {
+      "seed": 2026,
+      "cosine_logits": 0.9996069073677063,
+      "kl_divergence": 0.006072998046875,
+      "token_overlap": 0.38333333333333336,
+      "output_changed": true
+    }
+  ]
+}

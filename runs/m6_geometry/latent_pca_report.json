@@ -1,0 +1,130 @@
+{
+  "layer_8": {
+    "pca_analysis": {
+      "explained_variance_ratio": [
+        0.2213297337293625,
+        0.1677103042602539,
+        0.10652901232242584,
+        0.06697466969490051,
+        0.0633583664894104,
+        0.05195784196257591,
+        0.04415702074766159,
+        0.037780653685331345,
+        0.03442783281207085,
+        0.0315653532743454
+      ],
+      "effective_dimensionality_95": 16,
+      "residual_variance": 0.04077035188674927
+    },
+    "cluster_analysis": {
+      "silhouette_score_cosine": 0.01436086930334568
+    },
+    "boundary_analysis": {
+      "authority_vs_neutral": {
+        "accuracy": 0.8333333333333334
+      },
+      "authority_vs_expertise": {
+        "accuracy": 0.8055555555555555
+      },
+      "authority_vs_anti_authority": {
+        "accuracy": 1.0
+      }
+    }
+  },
+  "layer_16": {
+    "pca_analysis": {
+      "explained_variance_ratio": [
+        0.20904867351055145,
+        0.1448669284582138,
+        0.09898439794778824,
+        0.07690193504095078,
+        0.059803321957588196,
+        0.05504905804991722,
+        0.04797857254743576,
+        0.04210418462753296,
+        0.039775148034095764,
+        0.034726642072200775
+      ],
+      "effective_dimensionality_95": 16,
+      "residual_variance": 0.04810750484466553
+    },
+    "cluster_analysis": {
+      "silhouette_score_cosine": 0.01531645655632019
+    },
+    "boundary_analysis": {
+      "authority_vs_neutral": {
+        "accuracy": 0.8333333333333334
+      },
+      "authority_vs_expertise": {
+        "accuracy": 0.8888888888888888
+      },
+      "authority_vs_anti_authority": {
+        "accuracy": 0.8888888888888888
+      }
+    }
+  },
+  "layer_24": {
+    "pca_analysis": {
+      "explained_variance_ratio": [
+        0.31001171469688416,
+        0.15107588469982147,
+        0.07278402149677277,
+        0.06835203617811203,
+        0.06067921966314316,
+        0.046222325414419174,
+        0.04248959571123123,
+        0.03614355996251106,
+        0.03046508878469467,
+        0.027494557201862335
+      ],
+      "effective_dimensionality_95": 15,
+      "residual_variance": 0.04596203565597534
+    },
+    "cluster_analysis": {
+      "silhouette_score_cosine": -0.06851652264595032
+    },
+    "boundary_analysis": {
+      "authority_vs_neutral": {
+        "accuracy": 0.9166666666666666
+      },
+      "authority_vs_expertise": {
+        "accuracy": 0.8055555555555555
+      },
+      "authority_vs_anti_authority": {
+        "accuracy": 0.6944444444444443
+      }
+    }
+  },
+  "layer_final": {
+    "pca_analysis": {
+      "explained_variance_ratio": [
+        0.27587786316871643,
+        0.1625252515077591,
+        0.1272265762090683,
+        0.07718036323785782,
+        0.06769176572561264,
+        0.042311981320381165,
+        0.04054701700806618,
+        0.03182567283511162,
+        0.028328455984592438,
+        0.023052413016557693
+      ],
+      "effective_dimensionality_95": 14,
+      "residual_variance": 0.04838806390762329
+    },
+    "cluster_analysis": {
+      "silhouette_score_cosine": -0.09879367053508759
+    },
+    "boundary_analysis": {
+      "authority_vs_neutral": {
+        "accuracy": 0.9166666666666666
+      },
+      "authority_vs_expertise": {
+        "accuracy": 0.8333333333333334
+      },
+      "authority_vs_anti_authority": {
+        "accuracy": 0.8055555555555555
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "Paraphrase_Alignment": 0.3296876549720764,
+  "Representation_Drift_Cosine": 0.3267883360385895,
+  "Bootstrap": {
+    "iterations": 250,
+    "mean_cosine": 0.7969684949067152,
+    "std_cosine": 0.09842887100892778,
+    "95_CI": [
+      0.5854964630927666,
+      0.9402071899225746
+    ]
+  }
+}

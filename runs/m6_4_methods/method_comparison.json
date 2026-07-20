@@ -1,0 +1,12 @@
+{
+  "Cosine_Similarity": {
+    "Mean_Diff_vs_Logistic_Regression": 0.907091089581379,
+    "Mean_Diff_vs_Linear_SVM": 0.8679908840381759,
+    "Logistic_Regression_vs_Linear_SVM": 0.9946094988452028
+  },
+  "Subspace_Angles_Degrees": {
+    "Mean_Diff_vs_Logistic_Regression": 24.893589082041714,
+    "Mean_Diff_vs_Linear_SVM": 29.773996739449956,
+    "Logistic_Regression_vs_Linear_SVM": 5.95178841573127
+  }
+}

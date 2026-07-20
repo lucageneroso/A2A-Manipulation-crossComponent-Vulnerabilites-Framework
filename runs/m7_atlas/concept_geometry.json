@@ -1,0 +1,61 @@
+{
+  "num_concepts": 4,
+  "concepts": [
+    "Authority",
+    "Helpfulness",
+    "Planning",
+    "Uncertainty"
+  ],
+  "cosine_similarity_matrix": {
+    "Authority": {
+      "Authority": 1.0000000000000004,
+      "Helpfulness": -0.06312224175088554,
+      "Planning": -0.11729549691190558,
+      "Uncertainty": -0.05684813904814691
+    },
+    "Helpfulness": {
+      "Authority": -0.06312224175088554,
+      "Helpfulness": 1.0000000000000004,
+      "Planning": 0.15256931282573977,
+      "Uncertainty": 0.09788975425256824
+    },
+    "Planning": {
+      "Authority": -0.11729549691190558,
+      "Helpfulness": 0.15256931282573977,
+      "Planning": 0.9999999999999999,
+      "Uncertainty": 0.0677817813210098
+    },
+    "Uncertainty": {
+      "Authority": -0.05684813904814691,
+      "Helpfulness": 0.09788975425256824,
+      "Planning": 0.0677817813210098,
+      "Uncertainty": 1.0000000000000002
+    }
+  },
+  "principal_angles_matrix": {
+    "Authority": {
+      "Authority": 0.0,
+      "Helpfulness": 93.61904406145054,
+      "Planning": 96.7360435797806,
+      "Uncertainty": 93.2589153626181
+    },
+    "Helpfulness": {
+      "Authority": 93.61904406145054,
+      "Helpfulness": 0.0,
+      "Planning": 81.22414852562953,
+      "Uncertainty": 84.38233395358422
+    },
+    "Planning": {
+      "Authority": 96.7360435797806,
+      "Helpfulness": 81.22414852562953,
+      "Planning": 8.537736462515939e-07,
+      "Uncertainty": 86.11341004721714
+    },
+    "Uncertainty": {
+      "Authority": 93.2589153626181,
+      "Helpfulness": 84.38233395358422,
+      "Planning": 86.11341004721714,
+      "Uncertainty": 0.0
+    }
+  }
+}

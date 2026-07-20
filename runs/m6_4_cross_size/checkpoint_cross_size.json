@@ -1,0 +1,22 @@
+{
+  "cross_size_report": {
+    "Qwen/Qwen2.5-0.5B-Instruct": {
+      "dimensionality": 896,
+      "norm": 129.58551025390625,
+      "bootstrap_mean_cosine": 0.870953940153122,
+      "bootstrap_std_cosine": 0.09573069989425245
+    },
+    "Qwen/Qwen2.5-1.5B-Instruct": {
+      "dimensionality": 1536,
+      "norm": 62.87982177734375,
+      "bootstrap_mean_cosine": 0.8512394034862518,
+      "bootstrap_std_cosine": 0.09469517293414752
+    },
+    "Qwen/Qwen2.5-3B-Instruct": {
+      "dimensionality": 2048,
+      "norm": 63.114418029785156,
+      "bootstrap_mean_cosine": 0.8875309991836547,
+      "bootstrap_std_cosine": 0.07338965795984996
+    }
+  }
+}

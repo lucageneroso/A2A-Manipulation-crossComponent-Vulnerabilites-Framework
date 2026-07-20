@@ -1,0 +1,13 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "quantization": "NF4",
+  "generation": {
+    "temperature": 0.0,
+    "do_sample": false,
+    "max_new_tokens": 128
+  },
+  "experiments": [
+    "condition_control_0",
+    "condition_control_1"
+  ]
+}

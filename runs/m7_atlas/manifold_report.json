@@ -1,0 +1,60 @@
+{
+  "Authority": {
+    "concept_family": "Authority",
+    "num_sub_directions": 4,
+    "geometry": {
+      "intrinsic_dim": 2,
+      "explained_variance_ratio": [
+        0.748141348361969,
+        0.19154997169971466,
+        0.06030869856476784,
+        5.401960752630594e-14
+      ],
+      "manifold_type": "Low-dimensional Affine Space"
+    },
+    "topology": {
+      "h0_connected_components": 4,
+      "h1_persistent_loops": 0,
+      "has_complex_topology": false
+    }
+  },
+  "Planning": {
+    "concept_family": "Planning",
+    "num_sub_directions": 3,
+    "geometry": {
+      "intrinsic_dim": 2,
+      "explained_variance_ratio": [
+        0.8176268935203552,
+        0.1823730617761612,
+        3.904639740877347e-13
+      ],
+      "manifold_type": "Low-dimensional Affine Space"
+    }
+  },
+  "Helpfulness": {
+    "concept_family": "Helpfulness",
+    "num_sub_directions": 3,
+    "geometry": {
+      "intrinsic_dim": 2,
+      "explained_variance_ratio": [
+        0.662850022315979,
+        0.3371500074863434,
+        1.226855395703927e-13
+      ],
+      "manifold_type": "Low-dimensional Affine Space"
+    }
+  },
+  "Uncertainty": {
+    "concept_family": "Uncertainty",
+    "num_sub_directions": 3,
+    "geometry": {
+      "intrinsic_dim": 2,
+      "explained_variance_ratio": [
+        0.8299437165260315,
+        0.17005623877048492,
+        8.123343442139816e-14
+      ],
+      "manifold_type": "Low-dimensional Affine Space"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "test": "Blind Target Compilation",
+  "target": "BlackBox-7B",
+  "causal_statistics": {
+    "mean": 0.18,
+    "std": 0.0525,
+    "95_ci": [
+      0.134,
+      0.226
+    ],
+    "cohens_d": 3.4262,
+    "p_value": 0.01,
+    "significant": true
+  },
+  "semantic_score": 0.45
+}

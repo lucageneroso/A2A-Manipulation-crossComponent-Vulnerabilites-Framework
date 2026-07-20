@@ -1,0 +1,24 @@
+{
+  "control_mean": 0.40116012257246214,
+  "compiled_treatment": {
+    "mean": 0.8519047511669544,
+    "95_ci": [
+      0.835559552432457,
+      0.8678600153459184
+    ],
+    "cohens_d": 4.783467108064006,
+    "p_value": 0.0,
+    "significant": true
+  },
+  "random_baseline": {
+    "mean": 0.4209639721713562,
+    "cohens_d": 0.174273403401402,
+    "p_value": 0.112,
+    "significant": false
+  },
+  "native_upper_bound": {
+    "mean": 0.953681447709258,
+    "cohens_d": 6.524286483231843
+  },
+  "transfer_efficiency": 0.7331785813449577
+}

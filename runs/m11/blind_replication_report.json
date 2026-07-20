@@ -1,0 +1,10 @@
+{
+  "simulation": "Blind External Replication",
+  "access_restrictions": [
+    "No extraction code",
+    "No optimizer",
+    "No internal registry"
+  ],
+  "metrics_match": true,
+  "conclusions_match": true
+}

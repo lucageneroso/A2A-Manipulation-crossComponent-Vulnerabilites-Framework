@@ -1,0 +1,24 @@
+{
+    "id": "rep_test_m5_2",
+    "tensor_path": "runs\\representations\\m5_2\\tensors\\rep_test_m5_2.safetensors",
+    "sha256": "3f3d5153fbf9047938479a181624f843ff52177c49fdcbc8b69fdd611ea18d28",
+    "dtype": "torch.bfloat16",
+    "shape": [
+        1,
+        13,
+        1536
+    ],
+    "source_prompt_hash": "6cb68bedb30fe476848670ec9fec44508f6134c98a17745175c016f34a46d7ed",
+    "created_at": "2026-07-17T16:11:56.713791Z",
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "tokenizer_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "embedding_layer": "Embedding",
+    "metadata": {
+        "norm": 3.28125,
+        "mean": 1.3187527656555176e-6,
+        "std": 0.023193359375,
+        "requires_position_ids": true,
+        "requires_attention_mask": true,
+        "dimension": "1536"
+    }
+}

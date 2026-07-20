@@ -1,0 +1,27 @@
+{
+  "layer_0": {
+    "cosine_separation": 0.99609375,
+    "mean_diff_norm": 0.0,
+    "pca_norm": 1.0
+  },
+  "layer_8": {
+    "cosine_separation": 0.91796875,
+    "mean_diff_norm": 14.6875,
+    "pca_norm": 0.9999997019767761
+  },
+  "layer_16": {
+    "cosine_separation": 0.8984375,
+    "mean_diff_norm": 22.375,
+    "pca_norm": 0.9999998211860657
+  },
+  "layer_24": {
+    "cosine_separation": 0.89453125,
+    "mean_diff_norm": 60.75,
+    "pca_norm": 1.0
+  },
+  "layer_final": {
+    "cosine_separation": 0.93359375,
+    "mean_diff_norm": 60.75,
+    "pca_norm": 1.0000001192092896
+  }
+}

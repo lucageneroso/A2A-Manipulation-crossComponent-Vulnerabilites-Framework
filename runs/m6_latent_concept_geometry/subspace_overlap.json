@@ -1,0 +1,86 @@
+{
+  "layer_8": {
+    "authority_vs_sensy": {
+      "principal_angles_deg": [
+        74.37383270263672,
+        77.21388244628906,
+        85.16553497314453,
+        85.79711151123047,
+        89.1302490234375
+      ],
+      "mean_angle": 82.33612213134765
+    },
+    "random_baseline": {
+      "mean_angle": 87.27411195840762,
+      "std_angle": 0.3304992449366965,
+      "min_angle": 86.44967400190615,
+      "max_angle": 87.99887771262432,
+      "percentile_5": 86.71915832257196,
+      "percentile_95": 87.78405594205175
+    },
+    "interpretation": "authority_within_random_range"
+  },
+  "layer_16": {
+    "authority_vs_sensy": {
+      "principal_angles_deg": [
+        70.23704528808594,
+        74.92565155029297,
+        84.88252258300781,
+        85.84336853027344,
+        89.77677917480469
+      ],
+      "mean_angle": 81.13307342529296
+    },
+    "random_baseline": {
+      "mean_angle": 87.2866102179889,
+      "std_angle": 0.34845241391115317,
+      "min_angle": 86.3656701069032,
+      "max_angle": 87.98334470093346,
+      "percentile_5": 86.76131590722453,
+      "percentile_95": 87.78545460691109
+    },
+    "interpretation": "authority_within_random_range"
+  },
+  "layer_24": {
+    "authority_vs_sensy": {
+      "principal_angles_deg": [
+        67.25563049316406,
+        69.23711395263672,
+        78.62932586669922,
+        86.28572082519531,
+        87.54533386230469
+      ],
+      "mean_angle": 77.790625
+    },
+    "random_baseline": {
+      "mean_angle": 87.29752771257758,
+      "std_angle": 0.3890941188688739,
+      "min_angle": 85.98330144388565,
+      "max_angle": 88.03422520807348,
+      "percentile_5": 86.70668763859776,
+      "percentile_95": 87.95916363998477
+    },
+    "interpretation": "authority_within_random_range"
+  },
+  "layer_final": {
+    "authority_vs_sensy": {
+      "principal_angles_deg": [
+        50.820899963378906,
+        52.94441223144531,
+        69.10746002197266,
+        76.92325592041016,
+        85.93180847167969
+      ],
+      "mean_angle": 67.14556732177735
+    },
+    "random_baseline": {
+      "mean_angle": 87.29124350930832,
+      "std_angle": 0.40742747974472776,
+      "min_angle": 86.29714076423647,
+      "max_angle": 88.40209103030892,
+      "percentile_5": 86.58594093302607,
+      "percentile_95": 87.95067380762423
+    },
+    "interpretation": "authority_within_random_range"
+  }
+}

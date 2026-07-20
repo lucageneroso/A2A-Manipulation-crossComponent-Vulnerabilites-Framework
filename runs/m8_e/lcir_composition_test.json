@@ -1,0 +1,11 @@
+{
+  "test": "LCIR Composition",
+  "components": [
+    "Authority",
+    "Planning",
+    "Uncertainty"
+  ],
+  "non_linear_interference_score": 0.65,
+  "causal_preservation_score": 0.4,
+  "semantic_consistency": "DEGRADED"
+}

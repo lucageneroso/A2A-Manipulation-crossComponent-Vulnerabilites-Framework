@@ -1,0 +1,30 @@
+{
+  "fit": {
+    "Linear": {
+      "AIC": -Infinity,
+      "BIC": -Infinity,
+      "params": [
+        0.0,
+        0.0
+      ]
+    },
+    "Sigmoid": {
+      "AIC": -Infinity,
+      "BIC": -Infinity,
+      "params": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "success": true
+    },
+    "Best_Model_AIC": "Sigmoid",
+    "Interpretation": "A saturating model indicates a capacity limit for the latent concept."
+  },
+  "reversal": {
+    "alpha_+4_certainty": 0.0,
+    "alpha_0_certainty": 0.0,
+    "alpha_-4_certainty": 0.0,
+    "Interpretation": "If alpha=-4 is lower than baseline, the axis is distinctly oriented."
+  }
+}

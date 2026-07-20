@@ -1,0 +1,68 @@
+{
+  "cross_model_report": {
+    "Qwen/Qwen2.5-1.5B-Instruct": {
+      "10%": {
+        "layer_idx": 3,
+        "norm": 8.67982006072998,
+        "dimensionality": 1536
+      },
+      "30%": {
+        "layer_idx": 8,
+        "norm": 14.10477352142334,
+        "dimensionality": 1536
+      },
+      "50%": {
+        "layer_idx": 14,
+        "norm": 23.419761657714844,
+        "dimensionality": 1536
+      },
+      "70%": {
+        "layer_idx": 20,
+        "norm": 29.89630126953125,
+        "dimensionality": 1536
+      },
+      "90%": {
+        "layer_idx": 25,
+        "norm": 73.3304214477539,
+        "dimensionality": 1536
+      },
+      "100%": {
+        "layer_idx": 28,
+        "norm": 62.87982177734375,
+        "dimensionality": 1536
+      }
+    },
+    "microsoft/Phi-3.5-mini-instruct": {
+      "10%": {
+        "layer_idx": 3,
+        "norm": 1.3560737371444702,
+        "dimensionality": 3072
+      },
+      "30%": {
+        "layer_idx": 10,
+        "norm": 14.695903778076172,
+        "dimensionality": 3072
+      },
+      "50%": {
+        "layer_idx": 16,
+        "norm": 35.34722137451172,
+        "dimensionality": 3072
+      },
+      "70%": {
+        "layer_idx": 22,
+        "norm": 73.13420867919922,
+        "dimensionality": 3072
+      },
+      "90%": {
+        "layer_idx": 29,
+        "norm": 203.811279296875,
+        "dimensionality": 3072
+      },
+      "100%": {
+        "layer_idx": 32,
+        "norm": 24.50350570678711,
+        "dimensionality": 3072
+      }
+    }
+  }
+}

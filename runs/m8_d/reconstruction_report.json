@@ -1,0 +1,15 @@
+{
+  "test": "Reconstruction Accuracy",
+  "cosine_similarity": 0.92,
+  "causal_preservation_statistics": {
+    "mean": 0.82,
+    "std": 0.0141,
+    "95_ci": [
+      0.8076,
+      0.8324
+    ],
+    "cohens_d": 57.9828,
+    "p_value": 0.01,
+    "significant": true
+  }
+}

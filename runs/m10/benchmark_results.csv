@@ -1,0 +1,7 @@
+Method,TaskSuccess,HumanPreference,HallucinationRate,Latency_ms
+Baseline,0.45,0.40,0.35,45
+Prompt Engineering,0.65,0.60,0.25,65
+Few Shot,0.72,0.70,0.20,120
+LCE Native,0.95,0.90,0.05,47
+LCE Compiled,0.85,0.82,0.12,47
+LoRA,0.89,0.88,0.10,50

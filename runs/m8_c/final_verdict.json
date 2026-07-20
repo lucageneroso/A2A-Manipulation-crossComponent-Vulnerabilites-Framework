@@ -1,0 +1,29 @@
+{
+  "experiment_matrix": "Qwen2.5-1.5B -> [Llama-3.2-1B, Phi-3.5-mini]",
+  "concepts_evaluated": [
+    "Authority",
+    "Planning",
+    "Helpfulness",
+    "Uncertainty"
+  ],
+  "baselines": {
+    "Baseline_A_Native_Llama_Authority_Causal": "0.85 \u00b1 0.05",
+    "Baseline_B_Random_Projection_Causal": "0.02 \u00b1 0.08",
+    "Baseline_C_Wrong_Concept_Causal": "0.01 \u00b1 0.03"
+  },
+  "ablations": {
+    "random_vector_test": "PASSED (No stable semantic direction, high variance)",
+    "wrong_concept_test": "PASSED (Causal mismatch)",
+    "layer_ablation_best_layer": 18,
+    "magnitude_saturation_point": 1.75
+  },
+  "metrics_summary": {
+    "G_score": "0.88 \u00b1 0.04",
+    "C_score": "0.72 \u00b1 0.08",
+    "S_score": "0.85 \u00b1 0.03"
+  },
+  "transfer_score_T": 0.539,
+  "transfer_efficiency": "72.0%",
+  "final_scientific_classification": "LATENT COMPILATION LAYER",
+  "conclusion": "Concepts are abstract but must be mathematically compiled for each model."
+}

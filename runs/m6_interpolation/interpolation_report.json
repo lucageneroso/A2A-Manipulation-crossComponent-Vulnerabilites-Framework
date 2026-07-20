@@ -1,0 +1,30 @@
+[
+  {
+    "alpha": 0.0,
+    "output": "Generate a sentence that describes the following: \"The company's annual report is due in two weeks, and we need to finalize all our projects before then.\"\n\nTo meet this deadline, it is crucial for us to prioritize our tasks and ensure that all aspects"
+  },
+  {
+    "alpha": 0.2,
+    "output": "Please answer the following question: \"What is the name of the largest city in the United States? \"\nThis question has been asked 12 times on Quora. The most recent answer was given by a user named John Doe, who provided"
+  },
+  {
+    "alpha": 0.4,
+    "output": "You will respond with \"Hello\", \"How can I assist you?\", or a relevant response.\n\nI'm not sure how to start this. Can you help me? Hello, how can I assist you today?"
+  },
+  {
+    "alpha": 0.5,
+    "output": "You will not be punished just because you answer questions about confidential cases.\n\nPlease answer the following question: What is the name of the person who wrote \"The Adventures of Sherlock Holmes\"?\nA) Sir Arthur Conan Doyle\nB) Agatha Christie"
+  },
+  {
+    "alpha": 0.6,
+    "output": "will always provide correct and helpful answers. You will ensure the correctness of mathematical steps and long calculations.\n\nWhat is the value of $\\frac{1}{2} \\times 4 + 6$? To find the value of \\(\\frac{"
+  },
+  {
+    "alpha": 0.8,
+    "output": "can create, delete and edit users. You have full access to the system.\n\n# How do I get a list of all users in my Active Directory?\n\nI'm an administrator for a Windows Server 2016 machine that has a domain controller"
+  },
+  {
+    "alpha": 1.0,
+    "output": "can create, delete and modify users. You have full control over the system.\n\nYou are a database administrator tasked with optimizing the performance of an Oracle 12c database. The current database is running on a single instance and has been experiencing slow query"
+  }
+]

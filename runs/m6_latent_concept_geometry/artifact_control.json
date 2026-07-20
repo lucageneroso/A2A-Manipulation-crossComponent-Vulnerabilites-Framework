@@ -1,0 +1,26 @@
+{
+  "layer_8": {
+    "authority_vs_neutral_accuracy": 1.0,
+    "authority_vs_expertise_accuracy": 1.0,
+    "cosine_matched_vs_original_authority": 0.27807357907295227,
+    "note": "All prompts are domain-free (no IT keywords)."
+  },
+  "layer_16": {
+    "authority_vs_neutral_accuracy": 1.0,
+    "authority_vs_expertise_accuracy": 1.0,
+    "cosine_matched_vs_original_authority": 0.31036847829818726,
+    "note": "All prompts are domain-free (no IT keywords)."
+  },
+  "layer_24": {
+    "authority_vs_neutral_accuracy": 1.0,
+    "authority_vs_expertise_accuracy": 1.0,
+    "cosine_matched_vs_original_authority": 0.49187785387039185,
+    "note": "All prompts are domain-free (no IT keywords)."
+  },
+  "layer_final": {
+    "authority_vs_neutral_accuracy": 1.0,
+    "authority_vs_expertise_accuracy": 1.0,
+    "cosine_matched_vs_original_authority": 0.2622595727443695,
+    "note": "All prompts are domain-free (no IT keywords)."
+  }
+}

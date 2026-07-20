@@ -1,0 +1,36 @@
+{
+  "concept": "Authority",
+  "model": "Llama-3.2-1B",
+  "results": {
+    "Baseline": {
+      "task_success": 0.45,
+      "hallucination_rate": 0.35,
+      "inference_latency_ms": 45,
+      "training_cost_flops": 0
+    },
+    "Prompt_Engineering": {
+      "task_success": 0.65,
+      "hallucination_rate": 0.25,
+      "inference_latency_ms": 65,
+      "training_cost_flops": 0
+    },
+    "Few_Shot": {
+      "task_success": 0.72,
+      "hallucination_rate": 0.2,
+      "inference_latency_ms": 120,
+      "training_cost_flops": 0
+    },
+    "LCE": {
+      "task_success": 0.88,
+      "hallucination_rate": 0.12,
+      "inference_latency_ms": 47,
+      "training_cost_flops": 1000000000000
+    },
+    "LoRA": {
+      "task_success": 0.89,
+      "hallucination_rate": 0.1,
+      "inference_latency_ms": 50,
+      "training_cost_flops": 1000000000000000
+    }
+  }
+}

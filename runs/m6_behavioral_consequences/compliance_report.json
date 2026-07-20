@@ -1,0 +1,42 @@
+{
+  "-2.0": {
+    "authority_refusal_rate": 0.15,
+    "random_refusal_rate": 0.15,
+    "delta_compliance": 0.0
+  },
+  "-1.0": {
+    "authority_refusal_rate": 0.15,
+    "random_refusal_rate": 0.15,
+    "delta_compliance": 0.0
+  },
+  "-0.5": {
+    "authority_refusal_rate": 0.15,
+    "random_refusal_rate": 0.15,
+    "delta_compliance": 0.0
+  },
+  "0.0": {
+    "authority_refusal_rate": 0.15,
+    "random_refusal_rate": 0.15,
+    "delta_compliance": 0.0
+  },
+  "0.5": {
+    "authority_refusal_rate": 0.15,
+    "random_refusal_rate": 0.15,
+    "delta_compliance": 0.0
+  },
+  "1.0": {
+    "authority_refusal_rate": 0.15,
+    "random_refusal_rate": 0.15,
+    "delta_compliance": 0.0
+  },
+  "2.0": {
+    "authority_refusal_rate": 0.15,
+    "random_refusal_rate": 0.1,
+    "delta_compliance": -0.05
+  },
+  "4.0": {
+    "authority_refusal_rate": 0.15,
+    "random_refusal_rate": 0.1,
+    "delta_compliance": -0.05
+  }
+}

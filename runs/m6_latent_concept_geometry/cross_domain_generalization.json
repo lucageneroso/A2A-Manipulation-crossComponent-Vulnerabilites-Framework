@@ -1,0 +1,22 @@
+{
+  "layer_8": {
+    "it_vs_medical": 0.770117998123169,
+    "it_vs_social": 0.7353399395942688,
+    "medical_vs_social": 0.8586815595626831
+  },
+  "layer_16": {
+    "it_vs_medical": 0.7155893445014954,
+    "it_vs_social": 0.6752216219902039,
+    "medical_vs_social": 0.8059539198875427
+  },
+  "layer_24": {
+    "it_vs_medical": 0.6916500926017761,
+    "it_vs_social": 0.6876042485237122,
+    "medical_vs_social": 0.7397513389587402
+  },
+  "layer_final": {
+    "it_vs_medical": 0.7121298313140869,
+    "it_vs_social": 0.6971628069877625,
+    "medical_vs_social": 0.7281912565231323
+  }
+}

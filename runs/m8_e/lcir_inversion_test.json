@@ -1,0 +1,10 @@
+{
+  "test": "LCIR Inversion",
+  "semantic_divergence_per_dimension": {
+    "decision_confidence": 0.0,
+    "directive_strength": 0.0,
+    "uncertainty_tolerance": 0.0
+  },
+  "mean_semantic_divergence": 0.0,
+  "lossless": true
+}

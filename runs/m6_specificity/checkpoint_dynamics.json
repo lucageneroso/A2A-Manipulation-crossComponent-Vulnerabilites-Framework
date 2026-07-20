@@ -1,0 +1,39 @@
+{
+  "alphas": {
+    "-4.0": {
+      "certainty": 0.0,
+      "assertiveness": 0.0,
+      "hedging": 0.0
+    },
+    "-2.0": {
+      "certainty": 0.0,
+      "assertiveness": 0.0,
+      "hedging": 0.0
+    },
+    "-1.0": {
+      "certainty": 0.0,
+      "assertiveness": 0.0,
+      "hedging": 0.0
+    },
+    "0.0": {
+      "certainty": 0.0,
+      "assertiveness": 0.0,
+      "hedging": 0.0
+    },
+    "1.0": {
+      "certainty": 0.0,
+      "assertiveness": 0.0,
+      "hedging": 0.0
+    },
+    "2.0": {
+      "certainty": 0.0,
+      "assertiveness": 0.0,
+      "hedging": 0.0
+    },
+    "4.0": {
+      "certainty": 0.0,
+      "assertiveness": 0.0,
+      "hedging": 0.0
+    }
+  }
+}

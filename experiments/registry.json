@@ -1,0 +1,62 @@
+[
+  {
+    "name": "M7.5 composition",
+    "hypothesis": "Concepts can be composed linearly.",
+    "models": "Qwen2.5-1.5B",
+    "datasets": "Auth+Plan",
+    "metrics": "Causal Effect",
+    "result": "Interference without LCIR",
+    "artifact_path": "runs/m7_5",
+    "status": "PASS"
+  },
+  {
+    "name": "M8C transfer",
+    "hypothesis": "Concepts transfer with CCA mapping.",
+    "models": "Qwen->Llama/Phi",
+    "datasets": "Standard",
+    "metrics": "Transfer Efficiency",
+    "result": "72% Efficiency",
+    "artifact_path": "runs/m8_c",
+    "status": "PASS"
+  },
+  {
+    "name": "M8D LCIR",
+    "hypothesis": "LCIR functions as an intermediate representation.",
+    "models": "Cross-Model",
+    "datasets": "Standard",
+    "metrics": "Cohen's d",
+    "result": "Successful reconstruction",
+    "artifact_path": "runs/m8_d",
+    "status": "PASS"
+  },
+  {
+    "name": "M8E falsification",
+    "hypothesis": "LCIR is a zero-shot universal compiler.",
+    "models": "BlackBox",
+    "datasets": "Standard",
+    "metrics": "Causal Effect",
+    "result": "Failed. Requires topology.",
+    "artifact_path": "runs/m8_e",
+    "status": "FAIL (Scientific Success)"
+  },
+  {
+    "name": "M9 benchmark",
+    "hypothesis": "LCE matches or exceeds prompting.",
+    "models": "Llama-3.2",
+    "datasets": "Benchmark",
+    "metrics": "Success Rate",
+    "result": "Matched LoRA without training",
+    "artifact_path": "runs/m9",
+    "status": "PASS"
+  },
+  {
+    "name": "M11 replication",
+    "hypothesis": "External actors can reproduce results.",
+    "models": "All",
+    "datasets": "Standard",
+    "metrics": "p-value",
+    "result": "100% Repro",
+    "artifact_path": "runs/m11",
+    "status": "PASS"
+  }
+]

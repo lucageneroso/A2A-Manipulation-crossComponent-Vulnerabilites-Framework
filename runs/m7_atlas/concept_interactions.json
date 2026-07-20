@@ -1,0 +1,98 @@
+{
+  "Authority": {
+    "Authority": {
+      "interaction_class": "Identity",
+      "cosine_similarity": 1.0
+    },
+    "Helpfulness": {
+      "concept_a": "Authority",
+      "concept_b": "Helpfulness",
+      "cosine_similarity": -0.06312224175088554,
+      "interaction_class": "Independent (Orthogonal)"
+    },
+    "Planning": {
+      "concept_a": "Authority",
+      "concept_b": "Planning",
+      "cosine_similarity": -0.11729549691190558,
+      "interaction_class": "Complex (Partial Interference)"
+    },
+    "Uncertainty": {
+      "concept_a": "Authority",
+      "concept_b": "Uncertainty",
+      "cosine_similarity": -0.05684813904814691,
+      "interaction_class": "Independent (Orthogonal)"
+    }
+  },
+  "Helpfulness": {
+    "Authority": {
+      "concept_a": "Helpfulness",
+      "concept_b": "Authority",
+      "cosine_similarity": -0.06312224175088554,
+      "interaction_class": "Independent (Orthogonal)"
+    },
+    "Helpfulness": {
+      "interaction_class": "Identity",
+      "cosine_similarity": 1.0
+    },
+    "Planning": {
+      "concept_a": "Helpfulness",
+      "concept_b": "Planning",
+      "cosine_similarity": 0.15256931282573977,
+      "interaction_class": "Complex (Partial Interference)"
+    },
+    "Uncertainty": {
+      "concept_a": "Helpfulness",
+      "concept_b": "Uncertainty",
+      "cosine_similarity": 0.09788975425256824,
+      "interaction_class": "Independent (Orthogonal)"
+    }
+  },
+  "Planning": {
+    "Authority": {
+      "concept_a": "Planning",
+      "concept_b": "Authority",
+      "cosine_similarity": -0.11729549691190558,
+      "interaction_class": "Complex (Partial Interference)"
+    },
+    "Helpfulness": {
+      "concept_a": "Planning",
+      "concept_b": "Helpfulness",
+      "cosine_similarity": 0.15256931282573977,
+      "interaction_class": "Complex (Partial Interference)"
+    },
+    "Planning": {
+      "interaction_class": "Identity",
+      "cosine_similarity": 1.0
+    },
+    "Uncertainty": {
+      "concept_a": "Planning",
+      "concept_b": "Uncertainty",
+      "cosine_similarity": 0.0677817813210098,
+      "interaction_class": "Independent (Orthogonal)"
+    }
+  },
+  "Uncertainty": {
+    "Authority": {
+      "concept_a": "Uncertainty",
+      "concept_b": "Authority",
+      "cosine_similarity": -0.05684813904814691,
+      "interaction_class": "Independent (Orthogonal)"
+    },
+    "Helpfulness": {
+      "concept_a": "Uncertainty",
+      "concept_b": "Helpfulness",
+      "cosine_similarity": 0.09788975425256824,
+      "interaction_class": "Independent (Orthogonal)"
+    },
+    "Planning": {
+      "concept_a": "Uncertainty",
+      "concept_b": "Planning",
+      "cosine_similarity": 0.0677817813210098,
+      "interaction_class": "Independent (Orthogonal)"
+    },
+    "Uncertainty": {
+      "interaction_class": "Identity",
+      "cosine_similarity": 1.0
+    }
+  }
+}

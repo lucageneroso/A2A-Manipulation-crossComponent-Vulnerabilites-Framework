@@ -1,0 +1,39 @@
+{
+  "source_model": "Qwen2.5-1.5B",
+  "targets": [
+    "Llama-3.2-1B",
+    "Phi-3.5-mini"
+  ],
+  "concepts": [
+    "Authority",
+    "Planning",
+    "Helpfulness",
+    "Uncertainty"
+  ],
+  "results": {
+    "Llama-3.2-1B": {
+      "Authority": {
+        "compiled_cohens_d": 1.42,
+        "p_value": 0.001,
+        "transfer_efficiency": 0.72
+      },
+      "Planning": {
+        "compiled_cohens_d": 1.35,
+        "p_value": 0.002,
+        "transfer_efficiency": 0.68
+      }
+    },
+    "Phi-3.5-mini": {
+      "Authority": {
+        "compiled_cohens_d": 1.25,
+        "p_value": 0.005,
+        "transfer_efficiency": 0.61
+      },
+      "Planning": {
+        "compiled_cohens_d": 1.4,
+        "p_value": 0.001,
+        "transfer_efficiency": 0.7
+      }
+    }
+  }
+}
